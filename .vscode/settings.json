@@ -1,0 +1,8 @@
+{
+    "C_Cpp.default.compilerPath": "/home/david/Project/main.c",
+    "files.associations": {
+        "stdio.h": "c",
+        "header.h": "c",
+        "termios.h": "c"
+    }
+}

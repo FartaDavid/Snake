@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "header.h"
+#include <time.h>
+#include <stdlib.h>
 
 // Function to configure the terminal for non-canonical mode
 void configure_terminal() {
@@ -44,4 +46,20 @@ int kbhit() {
     }
 
     return 0;
+}
+
+// Function to generate random food on the board
+void randomfood(char board[N][N], int count) {
+    // Taking current time as seed
+    unsigned int seed = time(0);
+    for (int i = 0; i < count; i++) {
+        // Generate a random number in the range [min, max]
+        int rd_num1 = rand_r(&seed) % (18 - 1 + 1) + 1;
+        int rd_num2 = rand_r(&seed) % (18 - 1 + 1) + 1;
+        if (board[rd_num1][rd_num2] == ' ') {
+            board[rd_num1][rd_num2] = '*';
+        } else {
+            i--;
+        }
+    }
 }

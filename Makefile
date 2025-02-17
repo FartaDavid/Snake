@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -g -Wall -Werror
-target = main.c start.c moving.c
+target = main.c start.c moving.c others.c
 
 all: snake
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "header.h"
 
+// Function to fill the board with the border and empty spaces
 void fillboard(char board[N][N]) {
     int i, j;
     for (i = 0; i < N; i++) {
@@ -16,6 +17,7 @@ void fillboard(char board[N][N]) {
     }
 }
 
+// Function to print the board
 void printboard(char board[N][N]) {
     int i, j;
     for (i = 0; i < N; i++) {
