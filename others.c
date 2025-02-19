@@ -2,7 +2,7 @@
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "header.h"
+#include "game_mechanincs.h"
 #include <time.h>
 #include <stdlib.h>
 
@@ -53,7 +53,7 @@ void randomfood(char board[N][N], int count) {
     // Taking current time as seed
     unsigned int seed = time(0);
     for (int i = 0; i < count; i++) {
-        // Generate a random number in the range [min, max]
+        // Generate a random number in the range [1, 18]
         int rd_num1 = rand_r(&seed) % (18 - 1 + 1) + 1;
         int rd_num2 = rand_r(&seed) % (18 - 1 + 1) + 1;
         if (board[rd_num1][rd_num2] == ' ') {

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "header.h"
+#include "game_mechanincs.h"
 
 // Function to fill the board with the border and empty spaces
 void fillboard(char board[N][N]) {
@@ -25,5 +25,19 @@ void printboard(char board[N][N]) {
             printf("%c", board[i][j]);
         }
         printf("\n");
+    }
+}
+
+// Function to print the body of the snake
+void printbody(char board[N][N], Point tail[NN], int *tail_length) {
+    for (int i = 1; i < N - 1; i++) {
+        for (int j = 1; j < N - 1; j++) {
+            if (board[i][j] == '#') {
+                board[i][j] = ' ';
+            }
+        }
+    }
+    for (int i = 0; i < *tail_length; i++) {
+        board[tail[i].x][tail[i].y] = '#';
     }
 }

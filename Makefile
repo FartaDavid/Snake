@@ -1,11 +1,12 @@
 CC = gcc
 CFLAGS = -g -Wall -Werror
-target = main.c start.c moving.c others.c
+target = main.c printing.c moving.c others.c
+name = snake
 
 all: snake
 
 snake: $(target)
-	$(CC) $(CFLAGS) $(target) -o snake
+	$(CC) $(CFLAGS) $(target) -o $(name)
 
 clean:
-	rm -f snake
+	rm -f $(name)
